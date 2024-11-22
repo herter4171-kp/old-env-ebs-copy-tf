@@ -32,14 +32,7 @@ resource "aws_kms_key" "customer_managed_key" {
         "AWS": ${jsonencode(var.allowed_accounts)}
       },
       "Action": [
-        "kms:CreateGrant",
-        "kms:Decrypt",
-        "kms:Describe*",
-        "kms:Encrypt",
-        "kms:GenerateDataKey*",
-        "kms:Get*",
-        "kms:List*",
-        "kms:ReEncrypt"
+        "kms:*"
       ],
       "Resource": "*"
     }
